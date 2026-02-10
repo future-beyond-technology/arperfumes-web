@@ -1,24 +1,33 @@
 import type { Metadata } from 'next';
-import About from '@/components/About';
-import PageIntro from '@/components/PageIntro';
-import WhatsAppButton from '@/components/WhatsAppButton';
-import styles from '@/styles/components.module.css';
+import Link from 'next/link';
+import styles from '../corporate.module.css';
 
 export const metadata: Metadata = {
   title: 'About',
-  description:
-    'Learn the story behind AR Perfume, our inspiration, and our commitment to quality and authenticity.',
+  description: 'Learn about FiroseEnterprises and the portfolio strategy behind its brands.',
 };
 
 export default function AboutPage() {
   return (
-    <main className={styles.pageMain}>
-      <PageIntro
-        title="About AR Perfume"
-        description="A premium fragrance house built on identity, intention, and authentic quality."
-      />
-      <About variant="full" sectionId="about-story" />
-      <WhatsAppButton />
+    <main className={styles.page}>
+      <h1 className={styles.title}>About FiroseEnterprises</h1>
+      <p className={styles.lead}>
+        FiroseEnterprises operates a focused consumer brand portfolio with AR Perfumes, Neat &amp; Fresh, and Femison.
+      </p>
+
+      <section className={styles.sectionCard}>
+        <p>Our objective is to scale category-specific brands while preserving individual brand identity.</p>
+        <p>Each brand runs with dedicated positioning, product roadmaps, and customer channels.</p>
+      </section>
+
+      <div className={styles.actionRow}>
+        <Link href="/brands" className={styles.inlineAction}>
+          Explore brands
+        </Link>
+        <Link href="/contact" className={styles.inlineAction}>
+          Contact corporate team
+        </Link>
+      </div>
     </main>
   );
 }

@@ -1,0 +1,140 @@
+.brandsShell {
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: clamp(2rem, 4vw, 2.8rem) 0 clamp(3.1rem, 6vw, 4rem);
+  display: grid;
+  gap: 1.4rem;
+}
+
+.brandsHeader {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  background: linear-gradient(135deg, rgba(184, 152, 92, 0.16), rgba(9, 9, 9, 0.85));
+  padding: clamp(1rem, 2.2vw, 1.4rem);
+  display: grid;
+  gap: 0.7rem;
+}
+
+.brandsEyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+.brandsTitle {
+  color: var(--color-gold);
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(1.4rem, 2.8vw, 2rem);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.brandsNav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.brandsNav a {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  padding: 0.32rem 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.brandsNav a:hover {
+  color: var(--color-text);
+  border-color: var(--color-gold-dim);
+}
+
+.brandsBody {
+  display: grid;
+}
+
+.brandPage {
+  display: grid;
+  gap: 1rem;
+}
+
+.brandTitle {
+  margin: 0;
+  color: var(--color-gold);
+}
+
+.brandLead {
+  max-width: 72ch;
+}
+
+.brandList {
+  list-style: none;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.brandItemLink {
+  display: block;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  background: rgba(12, 12, 12, 0.72);
+  padding: 0.9rem;
+  color: var(--color-text);
+}
+
+.brandItemLink:hover {
+  border-color: var(--color-gold-dim);
+  background: rgba(184, 152, 92, 0.1);
+}
+
+.backLink {
+  display: inline-flex;
+  width: fit-content;
+  border: 1px solid var(--color-gold-dim);
+  border-radius: var(--radius-pill);
+  padding: 0.34rem 0.88rem;
+  color: var(--color-text);
+  background: rgba(184, 152, 92, 0.12);
+}
+
+.backLink:hover {
+  background: rgba(184, 152, 92, 0.2);
+}
+
+.placeholderPanel {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  background: rgba(12, 12, 12, 0.74);
+  padding: clamp(0.9rem, 2vw, 1.4rem);
+  display: grid;
+  gap: 0.55rem;
+}
+
+.statusBadge {
+  width: fit-content;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  padding: 0.25rem 0.68rem;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.inlineBrandAction {
+  width: fit-content;
+  border: 1px solid var(--color-gold-dim);
+  border-radius: var(--radius-pill);
+  padding: 0.36rem 0.8rem;
+  color: var(--color-text);
+}
+
+.inlineBrandAction:hover {
+  background: rgba(184, 152, 92, 0.18);
+}
+
+.metaTag {
+  width: fit-content;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  padding: 0.26rem 0.7rem;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
