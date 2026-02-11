@@ -10,9 +10,10 @@ export default function FemisonCtaBlocks({ whatsappUrl, mailtoUrl }: Readonly<Fe
   return (
     <section className={styles.ctaGrid}>
       <article className={styles.ctaCard}>
-        <h3 className={styles.ctaTitle}>Medical Channel Expansion</h3>
+        <h3 className={styles.ctaTitle}>Healthcare &amp; Retail Channel Expansion</h3>
         <p className={styles.ctaText}>
-          Open conversations for distributor and medical retail opportunities aligned with infant care categories.
+          Open conversations for distributor and retail opportunities across baby gripe water, Arwat, and glucose
+          categories.
         </p>
         <Link href="/business-with-us" className={styles.ctaLink}>
           Start Business Inquiry
@@ -20,8 +21,11 @@ export default function FemisonCtaBlocks({ whatsappUrl, mailtoUrl }: Readonly<Fe
       </article>
 
       <article className={styles.ctaCard}>
-        <h3 className={styles.ctaTitle}>Clinical & Product Queries</h3>
-        <p className={styles.ctaText}>Connect with the brand contact person for product profile and documentation support.</p>
+        <h3 className={styles.ctaTitle}>Product &amp; Distribution Queries</h3>
+        <p className={styles.ctaText}>
+          Connect with the brand contact person for product profiles, dosage guidance references, and documentation
+          support.
+        </p>
         <div className={styles.ctaActionRow}>
           <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className={styles.ctaLink}>
             WhatsApp Contact

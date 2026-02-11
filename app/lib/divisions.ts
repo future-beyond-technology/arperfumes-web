@@ -28,9 +28,9 @@ export const divisionCatalog: DivisionDefinition[] = [
   {
     id: 'femison',
     name: 'Femison',
-    category: 'Women Lifestyle',
+    category: 'Baby Care & Nutrition',
     description:
-      'Women lifestyle and wellness-led division focused on trust, safety communication, and category relevance.',
+      'Healthcare and nutrition division offering baby gripe water, Arwat formulations, and glucose products for everyday family use.',
     href: '/brands/femison',
     image: brandVisuals.femison.cardImage,
     imageAlt: brandVisuals.femison.alt,

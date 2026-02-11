@@ -8,7 +8,7 @@ Firose Enterprises builds and scales focused consumer brands with disciplined qu
 
 ### Key Brands
 - **AR Perfumes:** Premium luxury perfume brand with a Middle Eastern–inspired aesthetic.
-- **Femison:** Hygiene and personal care solutions.
+- **Femison:** Baby gripe water, Arwat, and glucose products for infant care and family wellness.
 - **Neat Fresh:** Housekeeping and wellness products.
 
 ---

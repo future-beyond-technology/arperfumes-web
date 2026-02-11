@@ -2,9 +2,10 @@ import styles from './femison.module.css';
 
 const focusAreas = [
   {
-    title: 'Baby Care Positioning',
-    description: 'Femison is positioned around infant wellness support and caregiver reassurance.',
-    bullets: ['Routine-use trust messaging', 'Clear dosage communication approach', 'Caregiver support orientation'],
+    title: 'Portfolio Positioning',
+    description:
+      'Femison combines baby gripe water, Arwat formulations, and glucose products for infant care and family wellness.',
+    bullets: ['Infant comfort support products', 'Arwat health formulations', 'Glucose products for all age groups'],
   },
   {
     title: 'Safety & Quality Assurance',
@@ -13,12 +14,12 @@ const focusAreas = [
   },
   {
     title: 'Channel Use-Cases',
-    description: 'Prepared for pharmacy, medical, and distributor-oriented demand environments.',
-    bullets: ['Medical store distribution', 'Healthcare retail fit', 'Institutional inquiry readiness'],
+    description: 'Prepared for pharmacy, retail, and distributor-oriented demand environments.',
+    bullets: ['Medical store distribution', 'General retail and grocery fit', 'Institutional inquiry readiness'],
   },
 ];
 
-const trustSignals = ['Caregiver-first communication', 'Safety-led production controls', 'Compliance-ready documentation'];
+const trustSignals = ['Infant-safe communication focus', 'Safety-led production controls', 'Compliance-ready documentation'];
 
 export default function FemisonProductSections() {
   return (
@@ -26,8 +27,8 @@ export default function FemisonProductSections() {
       <header className={styles.sectionHeading}>
         <h3 className={styles.sectionTitle}>Product & Trust Sections</h3>
         <p className={styles.sectionLead}>
-          Femison content architecture is prepared for future full implementation while keeping medical/distributor lead
-          conversion paths active today.
+          Femison content architecture is prepared for full portfolio implementation while keeping healthcare, retail,
+          and distributor conversion paths active today.
         </p>
       </header>
 

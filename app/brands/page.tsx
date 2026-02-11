@@ -40,7 +40,7 @@ export default function BrandsOverview() {
 
         <div className={styles.chipRow}>
           <p className={styles.chip}>Fragrance</p>
-          <p className={styles.chip}>Women Lifestyle</p>
+          <p className={styles.chip}>Baby Care &amp; Nutrition</p>
           <p className={styles.chip}>Hygiene / FMCG</p>
           <p className={styles.chip}>AI & Cybersecurity</p>
           <p className={styles.chip}>Distributor Ready</p>

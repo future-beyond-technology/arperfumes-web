@@ -23,7 +23,7 @@ const organizationSchema = {
   name: 'Firose Enterprises',
   url: ORGANIZATION_URL,
   description:
-    'Firose Enterprises is a diversified enterprise group operating AR Perfumes, Femison, Neat & Fresh, and Future Beyond Technology across fragrance, lifestyle, hygiene FMCG, AI engineering, and cybersecurity.',
+    'Firose Enterprises is a diversified enterprise group operating AR Perfumes, Femison, Neat & Fresh, and Future Beyond Technology across fragrance, baby care and nutrition, hygiene FMCG, AI engineering, and cybersecurity.',
   brand: divisionCatalog.map((division) => division.name),
   subOrganization: subOrganizationSchema,
   contactPoint: [
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     template: '%s | Firose Enterprises',
   },
   description:
-    'Firose Enterprises is the parent group for AR Perfumes, Femison, Neat & Fresh, and Future Beyond Technology, built for trusted consumer products and enterprise-grade technology systems.',
+    'Firose Enterprises is the parent group for AR Perfumes, Femison, Neat & Fresh, and Future Beyond Technology, built for trusted consumer products, baby care and nutrition offerings, and enterprise-grade technology systems.',
   keywords: [
     'Firose Enterprises',
     'AR Perfumes',
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Firose Enterprises',
     description:
-      'One group. Multiple trusted divisions across fragrance, lifestyle, hygiene FMCG, and AI-driven technology systems.',
+      'One group. Multiple trusted divisions across fragrance, baby care and nutrition, hygiene FMCG, and AI-driven technology systems.',
     url: ORGANIZATION_URL,
     siteName: 'Firose Enterprises',
     locale: 'en_US',

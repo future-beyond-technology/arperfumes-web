@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import MeaningBehindFirose from '@/app/components/MeaningBehindFirose';
 import { corporateVisuals } from '@/app/lib/brandVisuals';
 import { FBT_WEBSITE_URL, divisionCatalog } from '@/app/lib/divisions';
 import styles from '../corporate.module.css';
@@ -106,7 +107,7 @@ export default function AboutPage() {
         <div className={styles.aboutSignalsGrid}>
           <article className={styles.aboutSignalCard}>
             <p className={styles.statLabel}>Portfolio Focus</p>
-            <p className={styles.statValue}>Fragrance, Lifestyle, FMCG, Technology</p>
+            <p className={styles.statValue}>Fragrance, Baby Care &amp; Nutrition, FMCG, Technology</p>
           </article>
           <article className={styles.aboutSignalCard}>
             <p className={styles.statLabel}>Operating Model</p>
@@ -118,6 +119,8 @@ export default function AboutPage() {
           </article>
         </div>
       </section>
+
+      <MeaningBehindFirose />
 
       <section className={`${styles.section} ${styles.aboutDivisionSection}`}>
         <header className={styles.sectionHeading}>

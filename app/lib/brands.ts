@@ -56,12 +56,14 @@ export const brandCatalog: BrandDefinition[] = [
   {
     slug: 'femison',
     name: 'Femison',
-    category: 'Healthcare',
-    shortDescription: 'Baby care-focused gripe water portfolio built for everyday trust.',
-    portfolioDescription: 'Baby care-focused gripe water positioning with safety, trust, and caregiver confidence.',
+    category: 'Baby Care & Nutrition',
+    shortDescription:
+      'Baby gripe water, Arwat formulations, and glucose products developed for infant comfort and family wellness.',
+    portfolioDescription:
+      'A healthcare and nutrition portfolio spanning baby gripe water, Arwat, and glucose products for everyday household use.',
     contact: {
       personName: 'Femison Medical Liaison Lead',
-      role: 'Medical Channel Contact',
+      role: 'Healthcare & Retail Channel Contact',
       phone: '+91 9790600220',
       phoneDisplay: '+91 9790600220',
       whatsappNumber: '919790600220',

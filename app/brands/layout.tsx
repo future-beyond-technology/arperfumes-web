@@ -34,7 +34,8 @@ export default function BrandsLayout({ children }: Readonly<{ children: ReactNod
         <p className={styles.brandsEyebrow}>Firose Enterprises Group Structure</p>
         <h1 className={styles.brandsTitle}>Our Divisions</h1>
         <p className={styles.brandsLead}>
-          Consumer and technology divisions across fragrance, women lifestyle, hygiene FMCG, and enterprise AI systems.
+          Consumer and technology divisions across fragrance, baby care and nutrition, hygiene FMCG, and enterprise AI
+          systems.
         </p>
 
         <nav className={styles.brandsNav} aria-label="Divisions navigation">

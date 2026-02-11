@@ -19,25 +19,25 @@ const femisonContact = femisonBrand.contact;
 
 const femisonWhatsAppUrl = buildBrandWhatsAppUrl(
   femisonContact,
-  'Hello, I would like to discuss Femison product and medical distribution opportunities.'
+  'Hello, I would like to discuss Femison baby gripe water, Arwat, and glucose distribution opportunities.'
 );
 const femisonMailToUrl = buildBrandMailToUrl(
   femisonContact,
   'Femison Enquiry',
-  'Hello, I would like to discuss Femison product information and channel opportunities.'
+  'Hello, I would like to discuss Femison baby gripe water, Arwat, and glucose product information and channel opportunities.'
 );
 const femisonVisual = brandVisuals.femison;
 
 export const metadata: Metadata = {
   title: 'Femison',
   description:
-    'Femison is the gripe water and baby care-focused brand under Firose Enterprises, built on safety and caregiver trust.',
+    'Femison is the baby gripe water, Arwat, and glucose brand under Firose Enterprises, built for infant care and everyday family wellness.',
 };
 
 export default function Femison() {
   return (
     <main className={`${styles.brandPage} ${brandStyles.brandPageTheme}`}>
-      <p className={`${styles.metaTag} ${brandStyles.brandMeta}`}>Gripe Water Product Brand</p>
+      <p className={`${styles.metaTag} ${brandStyles.brandMeta}`}>Baby Care &amp; Nutrition Brand</p>
 
       <section className={styles.brandSpotlight}>
         <div className={styles.brandSpotlightMedia}>
@@ -55,13 +55,13 @@ export default function Femison() {
           <p className={`${styles.brandSpotlightBadge} ${brandStyles.brandMeta}`}>{femisonVisual.focus}</p>
           <h2 className={`${styles.brandSpotlightTitle} ${brandStyles.heroTitle}`}>Femison</h2>
           <p className={styles.brandSpotlightText}>
-            Femison is built for caregiver confidence with safety-oriented quality controls and channel-ready product
-            communication.
+            Femison supports infant care and family wellness with trusted gripe water, Arwat, and glucose products
+            backed by safety-oriented quality controls.
           </p>
           <div className={styles.brandSpotlightChips}>
-            <p className={`${styles.brandSpotlightChip} ${brandStyles.brandMeta}`}>Infant Wellness</p>
-            <p className={`${styles.brandSpotlightChip} ${brandStyles.brandMeta}`}>Caregiver Trust</p>
-            <p className={`${styles.brandSpotlightChip} ${brandStyles.brandMeta}`}>Medical Channel Fit</p>
+            <p className={`${styles.brandSpotlightChip} ${brandStyles.brandMeta}`}>Baby Gripe Water</p>
+            <p className={`${styles.brandSpotlightChip} ${brandStyles.brandMeta}`}>Arwat Formulations</p>
+            <p className={`${styles.brandSpotlightChip} ${brandStyles.brandMeta}`}>Glucose for All Ages</p>
           </div>
         </div>
       </section>

@@ -161,15 +161,20 @@ export default function CorporateHeader() {
           <div
             ref={divisionsMenuRef}
             className="relative"
-            onMouseEnter={() => setDivisionsOpen(true)}
-            onMouseLeave={() => setDivisionsOpen(false)}
           >
             <button
               type="button"
               className={divisionTriggerClass(divisionsActive, divisionsOpen)}
               aria-expanded={divisionsOpen}
+              aria-haspopup="menu"
               aria-controls="corporate-divisions-menu"
               onClick={() => setDivisionsOpen((current) => !current)}
+              onKeyDown={(event) => {
+                if (event.key === 'ArrowDown') {
+                  event.preventDefault();
+                  setDivisionsOpen(true);
+                }
+              }}
             >
               Our Divisions
               <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" className="h-4 w-4">
@@ -180,7 +185,7 @@ export default function CorporateHeader() {
             {divisionsOpen ? (
               <div
                 id="corporate-divisions-menu"
-                className="absolute left-0 top-full z-[70] mt-2 w-[320px] rounded-2xl border border-[#113b5f2a] bg-white/96 p-2 shadow-[0_18px_34px_rgba(10,58,90,0.22)] backdrop-blur"
+                className="absolute left-0 top-full z-[70] mt-1 w-[320px] rounded-2xl border border-[#113b5f2a] bg-white/96 p-2 shadow-[0_18px_34px_rgba(10,58,90,0.22)] backdrop-blur"
                 role="menu"
                 aria-label="Our divisions"
               >
