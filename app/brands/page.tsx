@@ -2,26 +2,11 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import {
-  AR_PERFUMES_WEBSITE_URL,
-  FBT_WEBSITE_URL,
-  NEAT_FRESH_WEBSITE_URL,
+  getDivisionPageHref,
+  getDivisionWebsiteHref,
   divisionCatalog,
 } from '@/app/lib/divisions';
 import styles from './brands.module.css';
-
-const FEMISON_WEBSITE_URL = 'https://femison.in';
-const DIVISION_PAGE_ROUTES: Partial<Record<string, string>> = {
-  'ar-perfumes': '/brands/ar-perfumes',
-  femison: '/brands/femison',
-  'neat-fresh': '/brands/neat-fresh',
-  'future-beyond-technology': '/brands/future-beyond-technology',
-};
-const DIVISION_WEBSITE_ROUTES: Partial<Record<string, string>> = {
-  'ar-perfumes': AR_PERFUMES_WEBSITE_URL,
-  femison: FEMISON_WEBSITE_URL,
-  'neat-fresh': NEAT_FRESH_WEBSITE_URL,
-  'future-beyond-technology': FBT_WEBSITE_URL,
-};
 
 export const metadata: Metadata = {
   title: 'Our Divisions',
@@ -68,10 +53,10 @@ export default function BrandsOverview() {
 
       <ul className={styles.brandList}>
         {divisionCatalog.map((division) => {
-          const divisionPageHref = DIVISION_PAGE_ROUTES[division.id] ?? division.href;
-          const divisionWebsiteHref = DIVISION_WEBSITE_ROUTES[division.id];
+          const divisionPageHref = getDivisionPageHref(division);
+          const divisionWebsiteHref = getDivisionWebsiteHref(division);
           const isTech = division.theme === 'tech';
-          const ctaLabel = division.ctaLabel ?? (divisionWebsiteHref ? 'Visit Website' : 'Open Division');
+          const ctaLabel = division.ctaLabel ?? 'Visit Website';
           const cardClass = isTech ? `${styles.brandVisualCard} ${styles.brandVisualCardTech}` : styles.brandVisualCard;
           const categoryClass = isTech
             ? `${styles.brandVisualCategory} ${styles.brandVisualCategoryTech}`
@@ -115,26 +100,16 @@ export default function BrandsOverview() {
                   </p>
                   <p className={descriptionClass}>{division.description}</p>
 
-                  {divisionWebsiteHref ? (
-                    <a
-                      href={divisionWebsiteHref}
-                      target="_self"
-                      rel="noopener noreferrer"
-                      className={actionClass}
-                      aria-label={`Visit ${division.name} website`}
-                    >
-                      {ctaLabel}
-                      <ExternalLinkIcon className="h-4 w-4" />
-                    </a>
-                  ) : (
-                    <Link
-                      href={divisionPageHref}
-                      className={actionClass}
-                      aria-label={`Open ${division.name} division page`}
-                    >
-                      {ctaLabel}
-                    </Link>
-                  )}
+                  <a
+                    href={divisionWebsiteHref}
+                    target="_self"
+                    rel="noopener noreferrer"
+                    className={actionClass}
+                    aria-label={`Visit ${division.name} website`}
+                  >
+                    {ctaLabel}
+                    <ExternalLinkIcon className="h-4 w-4" />
+                  </a>
                 </div>
               </article>
             </li>

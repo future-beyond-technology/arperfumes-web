@@ -1,10 +1,18 @@
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 import Link from 'next/link';
-import { divisionCatalog } from '@/app/lib/divisions';
+import {
+  FBT_WEBSITE_URL,
+  divisionCatalog,
+  type DivisionDefinition,
+} from '@/app/lib/divisions';
 import styles from './brands.module.css';
 
 const FEMISON_WEBSITE_URL = 'https://femison.in';
+const BRANDS_NAV_EXTERNAL_LINKS: Partial<Record<DivisionDefinition['id'], string>> = {
+  femison: FEMISON_WEBSITE_URL,
+  'future-beyond-technology': FBT_WEBSITE_URL,
+};
 
 export const metadata: Metadata = {
   title: 'Our Divisions',
@@ -43,9 +51,9 @@ export default function BrandsLayout({ children }: Readonly<{ children: ReactNod
         <nav className={styles.brandsNav} aria-label="Divisions navigation">
           <Link href="/brands">Overview</Link>
           {divisionCatalog.map((division) => {
-            const isFemison = division.id === 'femison';
-            const divisionHref = isFemison ? FEMISON_WEBSITE_URL : division.href;
-            const isExternalDivision = division.external || isFemison;
+            const externalLink = BRANDS_NAV_EXTERNAL_LINKS[division.id];
+            const divisionHref = externalLink ?? division.href;
+            const isExternalDivision = Boolean(externalLink) || division.external;
 
             return isExternalDivision ? (
               <a

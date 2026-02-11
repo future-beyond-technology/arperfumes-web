@@ -16,6 +16,21 @@ export type DivisionDefinition = {
 export const FBT_WEBSITE_URL = 'https://futurebeyondtech.in/';
 export const NEAT_FRESH_WEBSITE_URL = 'https://neatfresh.online';
 export const AR_PERFUMES_WEBSITE_URL = 'https://arperfumes.in';
+export const FEMISON_WEBSITE_URL = 'https://femison.in';
+
+const DIVISION_PAGE_HREF_BY_ID: Record<DivisionDefinition['id'], string> = {
+  'ar-perfumes': '/brands/ar-perfumes',
+  femison: '/brands/femison',
+  'neat-fresh': '/brands/neat-fresh',
+  'future-beyond-technology': '/brands/future-beyond-technology',
+};
+
+const DIVISION_WEBSITE_HREF_BY_ID: Record<DivisionDefinition['id'], string> = {
+  'ar-perfumes': AR_PERFUMES_WEBSITE_URL,
+  femison: FEMISON_WEBSITE_URL,
+  'neat-fresh': NEAT_FRESH_WEBSITE_URL,
+  'future-beyond-technology': FBT_WEBSITE_URL,
+};
 
 export const divisionCatalog: DivisionDefinition[] = [
   {
@@ -63,3 +78,11 @@ export const divisionCatalog: DivisionDefinition[] = [
     theme: 'tech',
   },
 ];
+
+export function getDivisionPageHref(division: Pick<DivisionDefinition, 'id' | 'href'>): string {
+  return DIVISION_PAGE_HREF_BY_ID[division.id] ?? division.href;
+}
+
+export function getDivisionWebsiteHref(division: Pick<DivisionDefinition, 'id'>): string {
+  return DIVISION_WEBSITE_HREF_BY_ID[division.id];
+}

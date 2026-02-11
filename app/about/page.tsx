@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import MeaningBehindFirose from '@/app/components/MeaningBehindFirose';
 import { corporateVisuals } from '@/app/lib/brandVisuals';
-import { divisionCatalog } from '@/app/lib/divisions';
+import { divisionCatalog, getDivisionPageHref, getDivisionWebsiteHref } from '@/app/lib/divisions';
 
 export const metadata: Metadata = {
   title: 'About',
@@ -176,47 +176,48 @@ export default function AboutPage() {
         </header>
 
         <div className="mt-4 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
-          {divisionCatalog.map((division) => (
+          {divisionCatalog.map((division) => {
+            const divisionPageHref = getDivisionPageHref(division);
+            const divisionWebsiteHref = getDivisionWebsiteHref(division);
+
+            return (
             <article
               key={division.id}
               className="group overflow-hidden rounded-2xl border border-[#e0c89331] bg-[#15120eb5] transition duration-500 hover:-translate-y-0.5 hover:border-[#e0c89372]"
             >
-              <div className="relative h-36 overflow-hidden">
-                <Image
-                  src={division.image}
-                  alt={division.imageAlt}
-                  fill
-                  className="object-cover transition duration-700 group-hover:scale-[1.04]"
-                  sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 25vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#090807e2] to-transparent" />
-                <p className="absolute bottom-2 left-2 rounded-full border border-[#e0c89355] bg-[#3a2d1e7f] px-2.5 py-1 text-[10px] uppercase tracking-[0.16em] text-[#ecd2a0]">
-                  {division.category}
-                </p>
-              </div>
+              <Link href={divisionPageHref} aria-label={`Open ${division.name} division page`}>
+                <div className="relative h-36 overflow-hidden">
+                  <Image
+                    src={division.image}
+                    alt={division.imageAlt}
+                    fill
+                    className="object-cover transition duration-700 group-hover:scale-[1.04]"
+                    sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 25vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#090807e2] to-transparent" />
+                  <p className="absolute bottom-2 left-2 rounded-full border border-[#e0c89355] bg-[#3a2d1e7f] px-2.5 py-1 text-[10px] uppercase tracking-[0.16em] text-[#ecd2a0]">
+                    {division.category}
+                  </p>
+                </div>
+              </Link>
 
               <div className="grid gap-2 p-4">
                 <h3 className="text-2xl font-normal text-[#f2e7cf]">{division.name}</h3>
                 <p className="text-sm text-[#b7ac97]">{division.description}</p>
 
-                {division.external ? (
-                  <a
-                    href={division.href}
-                    target="_self"
-                    rel="noopener noreferrer"
-                    className="fe-link-chip w-fit"
-                    aria-label={`Visit ${division.name} website`}
-                  >
-                    Visit Website
-                  </a>
-                ) : (
-                  <Link href={division.href} className="fe-link-chip w-fit" aria-label={`Open ${division.name}`}>
-                    Open Division
-                  </Link>
-                )}
+                <a
+                  href={divisionWebsiteHref}
+                  target="_self"
+                  rel="noopener noreferrer"
+                  className="fe-link-chip w-fit"
+                  aria-label={`Visit ${division.name} website`}
+                >
+                  Visit Website
+                </a>
               </div>
             </article>
-          ))}
+            );
+          })}
         </div>
       </section>
     </main>
