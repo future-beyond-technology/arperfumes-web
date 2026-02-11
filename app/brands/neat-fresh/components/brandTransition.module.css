@@ -1,34 +1,24 @@
 .transitionBanner {
-  border: 2px solid var(--nf-border);
+  border: 1px solid rgba(203, 232, 220, 0.4);
   border-radius: 24px;
-  background: linear-gradient(
-    135deg,
-    rgba(31, 107, 85, 0.08) 0%,
-    rgba(31, 107, 85, 0.04) 50%,
-    rgba(255, 255, 255, 0.95) 100%
-  );
-  box-shadow: 
-    0 4px 16px rgba(31, 107, 85, 0.12),
-    0 0 0 1px rgba(31, 107, 85, 0.08);
+  background:
+    radial-gradient(120% 160% at 0% 0%, rgba(126, 191, 168, 0.2) 0%, rgba(126, 191, 168, 0) 58%),
+    linear-gradient(165deg, rgba(15, 20, 18, 0.94), rgba(8, 10, 9, 0.98));
+  box-shadow:
+    0 18px 36px rgba(0, 0, 0, 0.42),
+    0 0 0 1px rgba(203, 232, 220, 0.1) inset;
   overflow: hidden;
   position: relative;
-  animation: transitionSlideIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: transitionSlideIn 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .transitionBanner::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.4) 50%,
-    transparent 100%
-  );
-  animation: transitionShimmer 3s ease-in-out 0.5s infinite;
+  inset: -120% -34%;
+  background: linear-gradient(114deg, transparent 39%, rgba(248, 237, 215, 0.26) 50%, transparent 62%);
+  animation: transitionShimmer 7s ease-in-out infinite;
+  pointer-events: none;
 }
 
 .transitionContent {
@@ -51,89 +41,97 @@
   width: 56px;
   height: 56px;
   border-radius: 16px;
-  background: linear-gradient(135deg, #1f6b55, #2c8a6f);
+  border: 1px solid rgba(203, 232, 220, 0.48);
+  background: linear-gradient(145deg, rgba(126, 191, 168, 0.85), rgba(86, 149, 127, 0.95));
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 20px rgba(31, 107, 85, 0.3);
-  animation: transitionIconPulse 2s ease-in-out infinite;
+  color: #0d1a16;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.32);
+  animation: transitionIconPulse 2.4s ease-in-out infinite;
 }
 
 .iconSvg {
   width: 28px;
   height: 28px;
-  color: #ffffff;
-  animation: transitionIconBounce 2s ease-in-out infinite;
 }
 
 .transitionText {
   display: grid;
-  gap: 0.5rem;
+  gap: 0.52rem;
 }
 
 .transitionTitle {
-  font-size: clamp(1.1rem, 2.2vw, 1.4rem);
-  font-weight: 600;
-  color: var(--nf-accent);
+  font-size: clamp(1.1rem, 2.2vw, 1.45rem);
+  font-weight: 500;
+  color: #efe7dd;
   margin: 0;
-  line-height: 1.3;
-  animation: transitionFadeIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+  line-height: 1.25;
+  letter-spacing: 0.03em;
+  animation: transitionFadeIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.16s both;
 }
 
 .transitionDescription {
   font-size: clamp(0.9rem, 1.8vw, 1rem);
-  color: #3f6255;
-  line-height: 1.6;
+  color: #b9afa3;
+  line-height: 1.62;
   margin: 0;
-  animation: transitionFadeIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
+  animation: transitionFadeIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.26s both;
 }
 
-.transitionLink {
-  color: var(--nf-accent);
-  font-weight: 600;
+.transitionLink,
+.ownershipLink {
+  color: #cbe8dc;
+  font-weight: 500;
   text-decoration: underline;
-  text-decoration-color: rgba(31, 107, 85, 0.3);
+  text-decoration-color: rgba(203, 232, 220, 0.4);
   text-underline-offset: 2px;
-  transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: color 0.24s var(--ease-out), text-decoration-color 0.24s var(--ease-out);
 }
 
 .transitionLink:hover,
-.transitionLink:focus-visible {
-  color: #2c8a6f;
-  text-decoration-color: #2c8a6f;
+.transitionLink:focus-visible,
+.ownershipLink:hover,
+.ownershipLink:focus-visible {
+  color: #e9f6ef;
+  text-decoration-color: rgba(233, 246, 239, 0.9);
 }
 
 .transitionActions {
-  animation: transitionFadeIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.4s both;
+  animation: transitionFadeIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.34s both;
 }
 
 .transitionButton {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.7rem 1.3rem;
+  min-height: var(--tap-min);
+  padding: 0.76rem 1.3rem;
   border-radius: 999px;
-  background: linear-gradient(135deg, #1f6b55, #2c8a6f);
-  color: #ffffff;
+  border: 1px solid rgba(245, 226, 187, 0.5);
+  background: linear-gradient(140deg, #f2deb5 0%, #dab67c 48%, #bc9150 100%);
+  color: #22180f;
   font-weight: 600;
-  font-size: 0.95rem;
-  box-shadow: 0 6px 18px rgba(31, 107, 85, 0.3);
-  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
-  border: none;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.36),
+    0 0 0 1px rgba(224, 200, 147, 0.38) inset;
+  transition: transform 0.25s var(--ease-out), box-shadow 0.25s var(--ease-out), filter 0.25s var(--ease-out);
   cursor: pointer;
 }
 
 .transitionButton:hover,
 .transitionButton:focus-visible {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(31, 107, 85, 0.4);
-  background: linear-gradient(135deg, #2c8a6f, #1f6b55);
+  transform: translateY(-1px);
+  filter: brightness(1.04);
 }
 
 .buttonIcon {
   width: 18px;
   height: 18px;
-  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 0.25s var(--ease-out);
 }
 
 .transitionButton:hover .buttonIcon {
@@ -141,50 +139,34 @@
 }
 
 .ownershipFooter {
-  border-top: 1px solid var(--nf-border);
-  background: rgba(31, 107, 85, 0.04);
+  border-top: 1px solid rgba(203, 232, 220, 0.24);
+  background: rgba(17, 23, 20, 0.86);
   padding: 1rem clamp(1.2rem, 3vw, 1.8rem);
   display: flex;
   align-items: flex-start;
   gap: 0.8rem;
-  animation: transitionFadeIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.5s both;
+  animation: transitionFadeIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.44s both;
 }
 
 .shieldIcon {
   width: 20px;
   height: 20px;
-  color: var(--nf-accent);
+  color: #cbe8dc;
   flex-shrink: 0;
   margin-top: 2px;
 }
 
 .ownershipText {
   font-size: 0.88rem;
-  color: #305b4d;
-  line-height: 1.6;
+  color: #b9afa3;
+  line-height: 1.62;
   margin: 0;
 }
 
-.ownershipLink {
-  color: var(--nf-accent);
-  font-weight: 600;
-  text-decoration: underline;
-  text-decoration-color: rgba(31, 107, 85, 0.3);
-  text-underline-offset: 2px;
-  transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.ownershipLink:hover,
-.ownershipLink:focus-visible {
-  color: #2c8a6f;
-  text-decoration-color: #2c8a6f;
-}
-
-/* Animations */
 @keyframes transitionSlideIn {
   from {
     opacity: 0;
-    transform: translateY(-20px) scale(0.98);
+    transform: translateY(18px) scale(0.985);
   }
   to {
     opacity: 1;
@@ -204,36 +186,30 @@
 }
 
 @keyframes transitionShimmer {
-  0% {
-    left: -100%;
+  0%,
+  66% {
+    transform: translateX(-74%);
+    opacity: 0;
   }
-  50%,
+  72% {
+    opacity: 1;
+  }
   100% {
-    left: 100%;
+    transform: translateX(74%);
+    opacity: 0;
   }
 }
 
 @keyframes transitionIconPulse {
   0%,
   100% {
-    box-shadow: 0 8px 20px rgba(31, 107, 85, 0.3);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.32);
   }
   50% {
-    box-shadow: 0 8px 28px rgba(31, 107, 85, 0.5);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.42);
   }
 }
 
-@keyframes transitionIconBounce {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-3px);
-  }
-}
-
-/* Responsive adjustments */
 @media (max-width: 767px) {
   .transitionActions {
     width: 100%;
@@ -242,5 +218,21 @@
   .transitionButton {
     width: 100%;
     justify-content: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .transitionBanner,
+  .transitionTitle,
+  .transitionDescription,
+  .transitionActions,
+  .ownershipFooter,
+  .transitionIcon,
+  .transitionBanner::before,
+  .buttonIcon {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
   }
 }

@@ -51,15 +51,20 @@ export default function BrandsOverview() {
         {divisionCatalog.map((division) => {
           const isTech = division.theme === 'tech';
           const ctaLabel = division.ctaLabel ?? (division.external ? 'Visit Website' : 'Open Division');
-          const cardClass = isTech
-            ? `${styles.brandVisualCard} border-[#2b5d8f] bg-gradient-to-b from-[#0c1d33] to-[#11253e] text-[#e8f2ff] shadow-[0_0_0_1px_rgba(64,126,191,0.18),0_16px_34px_rgba(8,23,40,0.5)]`
-            : styles.brandVisualCard;
+          const cardClass = isTech ? `${styles.brandVisualCard} ${styles.brandVisualCardTech}` : styles.brandVisualCard;
           const categoryClass = isTech
-            ? 'absolute bottom-3 left-3 inline-flex items-center gap-1 rounded-full border border-[#a2cdfc66] bg-[#1c467266] px-3 py-1 text-xs font-medium uppercase tracking-[0.08em] text-[#d7eaff]'
+            ? `${styles.brandVisualCategory} ${styles.brandVisualCategoryTech}`
             : styles.brandVisualCategory;
           const actionClass = isTech
-            ? 'mt-1 inline-flex w-fit items-center gap-1 rounded-full border border-[#8ebceb70] bg-[#17385c66] px-4 py-2 text-sm font-medium text-[#d5e9ff] transition hover:bg-[#1d4a786b]'
+            ? `${styles.brandVisualAction} ${styles.brandVisualActionTech}`
             : styles.brandVisualAction;
+          const titleClass = isTech
+            ? `${styles.brandItemTitle} ${styles.brandItemTitleTech}`
+            : styles.brandItemTitle;
+          const focusClass = isTech
+            ? `${styles.brandVisualFocus} ${styles.brandVisualFocusTech}`
+            : styles.brandVisualFocus;
+          const descriptionClass = styles.brandItemText;
 
           const body = (
             <>
@@ -76,11 +81,11 @@ export default function BrandsOverview() {
               </div>
 
               <div className={styles.brandVisualBody}>
-                <h3 className={isTech ? 'text-xl font-semibold text-[#e8f4ff]' : styles.brandItemTitle}>{division.name}</h3>
-                <p className={isTech ? 'w-fit rounded-full border border-[#8ebceb70] bg-[#17385c66] px-2.5 py-1 text-xs text-[#d5e9ff]' : styles.brandVisualFocus}>
+                <h3 className={titleClass}>{division.name}</h3>
+                <p className={focusClass}>
                   {isTech ? 'Technology Division' : 'Consumer Division'}
                 </p>
-                <p className={isTech ? 'text-sm text-[#c7d9f0]' : styles.brandItemText}>{division.description}</p>
+                <p className={descriptionClass}>{division.description}</p>
                 <span className={actionClass}>
                   {division.external ? (
                     <>
